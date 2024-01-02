@@ -1,7 +1,7 @@
 //Robot armour
 /obj/item/clothing/suit/modular/robot
 	name = "XR-1 armor plating"
-	desc = "Medium armor plating designed for self mounting on TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	desc = "Medium armor plating designed for self mounting on Solarian Federation combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
 
 	item_icons = list(slot_wear_suit_str = 'icons/mob/modular/robot_armor.dmi')
 	icon_state = "chest"
@@ -49,14 +49,14 @@
 
 /obj/item/clothing/suit/modular/robot/light
 	name = "XR-1-L armor plating"
-	desc = "Light armor plating designed for self mounting on TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	desc = "Light armor plating designed for self mounting on Solarian Federation combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
 	soft_armor = list(MELEE = 35, BULLET = 55, LASER = 55, ENERGY = 50, BOMB = 45, BIO = 45, FIRE = 45, ACID = 45)
 	slowdown = SLOWDOWN_ARMOR_LIGHT
 	greyscale_config = /datum/greyscale_config/robot/light
 
 /obj/item/clothing/suit/modular/robot/heavy
 	name = "XR-1-H armor plating"
-	desc = "Heavy armor plating designed for self mounting on TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	desc = "Heavy armor plating designed for self mounting on Solarian Federation combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
 	soft_armor = list(MELEE = 50, BULLET = 70, LASER = 70, ENERGY = 60, BOMB = 55, BIO = 55, FIRE = 55, ACID = 60)
 	slowdown = SLOWDOWN_ARMOR_HEAVY
 	greyscale_config = /datum/greyscale_config/robot/heavy
@@ -76,7 +76,7 @@
 //robot hats
 /obj/item/clothing/head/modular/robot
 	name = "XN-1 upper armor plating"
-	desc = "Medium armor plating designed for self mounting on the upper half of TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	desc = "Medium armor plating designed for self mounting on the upper half of Solarian Federation combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items_lefthand_1.dmi',
 		slot_r_hand_str = 'icons/mob/items_righthand_1.dmi',
@@ -118,13 +118,13 @@
 
 /obj/item/clothing/head/modular/robot/light
 	name = "XN-1-L upper armor plating"
-	desc = "Light armor plating designed for self mounting on the upper half of TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	desc = "Light armor plating designed for self mounting on the upper half of Solarian Federation combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot/light)
 	greyscale_config = /datum/greyscale_config/robot/light
 
 /obj/item/clothing/head/modular/robot/heavy
 	name = "XN-1-H upper armor plating"
-	desc = "Heavy armor plating designed for self mounting on the upper half of TerraGov combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
+	desc = "Heavy armor plating designed for self mounting on the upper half of Solarian Federation combat robotics. It has self-sealing bolts for mounting on robotic owners inside."
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot/heavy)
 	greyscale_config = /datum/greyscale_config/robot/heavy
 

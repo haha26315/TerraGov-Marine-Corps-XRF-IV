@@ -2,7 +2,7 @@
 
 
 /obj/item/clothing/under/marine
-	name = "\improper TGMC uniform"
+	name = "\improper Sol Fed uniform"
 	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented marine uniform. You suspect it's not as robust-proof as advertised."
 	siemens_coefficient = 0.9
 	icon = 'icons/obj/clothing/uniforms/marine_uniforms.dmi'
@@ -26,7 +26,7 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/white_vest)
 
 /obj/item/clothing/under/marine/hyperscale
-	name = "\improper 8E Chameleon TGMC uniform"
+	name = "\improper 8E Chameleon Sol Fed uniform"
 	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented marine uniform BUT colorable with a facepaint! You suspect it's not as robust-proof as advertised."
 	icon_state = "hyperscale_marine_jumpsuit"
 	item_state = "hyperscale_marine_jumpsuit"
@@ -43,49 +43,49 @@
 
 //Squad colored turtlenecks
 /obj/item/clothing/under/marine/squad/neck
-	name = "\improper TGMC Delta turtleneck"
-	desc = "A standard issued TGMC turtleneck colored blue."
+	name = "\improper Sol Fed Delta turtleneck"
+	desc = "A standard issued Sol Fed turtleneck colored blue."
 	icon_state = "delta_merc"
 	adjustment_variants = list(
 		"Rolled Sleeves" = "_d",
 	)
 
 /obj/item/clothing/under/marine/squad/neck/delta
-	name = "\improper TGMC Delta turtleneck"
-	desc = "A standard issued TGMC turtleneck colored blue, with a slight hint of bravery."
+	name = "\improper Sol Fed Delta turtleneck"
+	desc = "A standard issued Sol Fed turtleneck colored blue, with a slight hint of bravery."
 	icon_state = "delta_merc"
 
 /obj/item/clothing/under/marine/squad/neck/charile
-	name = "\improper TGMC Charile turtleneck"
-	desc = "A standard issued TGMC turtleneck colored purple, you're reminded of how proper squad cohesion can make or break a mission."
+	name = "\improper Sol Fed Charile turtleneck"
+	desc = "A standard issued Sol Fed turtleneck colored purple, you're reminded of how proper squad cohesion can make or break a mission."
 	icon_state = "charlie_merc"
 
 /obj/item/clothing/under/marine/squad/neck/bravo
-	name = "\improper TGMC Bravo turtleneck"
-	desc = "A standard issued TGMC turtleneck colored yellow, you suddenly get thoughts of how to improve the FOB, if slightly."
+	name = "\improper Sol Fed Bravo turtleneck"
+	desc = "A standard issued Sol Fed turtleneck colored yellow, you suddenly get thoughts of how to improve the FOB, if slightly."
 	icon_state = "bravo_merc"
 
 /obj/item/clothing/under/marine/squad/neck/alpha
-	name = "\improper TGMC Alpha turtleneck"
-	desc = "A standard issued TGMC turtleneck colored red, you feel as if you can face the world and all it has to bring against you."
+	name = "\improper Sol Fed Alpha turtleneck"
+	desc = "A standard issued Sol Fed turtleneck colored red, you feel as if you can face the world and all it has to bring against you."
 	icon_state = "alpha_merc"
 
 // camo things stuff yeah!
 
 /obj/item/clothing/under/marine/camo
-	name = "\improper TGMC camo fatigues (jungle)"
+	name = "\improper Sol Fed camo fatigues (jungle)"
 	icon_state = "m_marine_jumpsuit"
 
 /obj/item/clothing/under/marine/camo/snow
-	name = "\improper TGMC camo fatigues (snow)"
+	name = "\improper Sol Fed camo fatigues (snow)"
 	icon_state = "s_marine_jumpsuit"
 
 /obj/item/clothing/under/marine/camo/desert
-	name = "\improper TGMC camo fatigues (desert)"
+	name = "\improper Sol Fed camo fatigues (desert)"
 	icon_state = "d_marine_jumpsuit"
 
 /obj/item/clothing/under/marine/corpsman
-	name = "\improper TGMC corpsman fatigues"
+	name = "\improper Sol Fed corpsman fatigues"
 	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented combat corpsman fatigues. You suspect it's not as robust-proof as advertised."
 	icon_state = "marine_medic"
 
@@ -93,7 +93,7 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/white_vest)
 
 /obj/item/clothing/under/marine/engineer
-	name = "\improper TGMC engineer fatigues"
+	name = "\improper Sol Fed engineer fatigues"
 	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented combat engineer fatigues. You suspect it's not as robust-proof as advertised."
 	icon_state = "marine_engineer"
 
@@ -101,7 +101,7 @@
 	starting_attachments = list(/obj/item/armor_module/storage/uniform/black_vest)
 
 /obj/item/clothing/under/marine/jaeger
-	name = "\improper TGMC jaeger undersuit"
+	name = "\improper Sol Fed jaeger undersuit"
 	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented marine uniform. You suspect it's not as robust-proof as advertised."
 	siemens_coefficient = 0.9
 	icon_state = "marine_undersuit"
@@ -181,7 +181,7 @@
 
 /obj/item/clothing/under/marine/officer/logistics
 	name = "marine officer uniform"
-	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented uniform worn by logistics officers of the TGMC. Do the corps proud."
+	desc = "A standard-issue, kevlar-weaved, hazmat-tested, EMF-augmented uniform worn by logistics officers of the Sol Fed. Do the corps proud."
 	icon_state = "BO_jumpsuit"
 	flags_item_map_variant = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT)
 
@@ -214,7 +214,7 @@
 
 /obj/item/clothing/under/marine/officer/exec
 	name = "field commander uniform"
-	desc = "A special-issue, kevlar-weaved, hazmat-tested, EMF-augmented worn by a field-grade officer of the TGMC. You suspect it's not as robust-proof as advertised."
+	desc = "A special-issue, kevlar-weaved, hazmat-tested, EMF-augmented worn by a field-grade officer of the Sol Fed. You suspect it's not as robust-proof as advertised."
 	icon_state = "XO_jumpsuit"
 	flags_item_map_variant = (ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT)
 
@@ -254,7 +254,7 @@
 	icon_state = "research_jumpsuit"
 
 /obj/item/clothing/under/marine/whites
-	name = "\improper TGMC white dress uniform"
+	name = "\improper Sol Fed white dress uniform"
 	desc = "A standard-issue TerraGov Marine Corps white dress uniform. The starch in the fabric chafes a small amount but it pales in comparison to the pride you feel when you first put it on during graduation from boot camp. Doesn't seem to fit perfectly around the waist though."
 	siemens_coefficient = 0.9
 	icon_state = "marine_whites" //with thanks to Manezinho
@@ -262,7 +262,7 @@
 	adjustment_variants = list()
 
 /obj/item/clothing/under/marine/service
-	name = "\improper TGMC service uniform"
+	name = "\improper Sol Fed service uniform"
 	desc = "A standard-issue TerraGov Marine Corps dress uniform. Sometimes, you hate wearing this since you remember wearing this to Infantry School and have to wear this when meeting a commissioned officer. This is what you wear when you are not deployed and are working in an office. Doesn't seem to fit perfectly around the waist."
 	siemens_coefficient = 0.9
 	icon_state = "marine_service" //with thanks to Fitz 'Pancake' Sholl
@@ -436,7 +436,7 @@
 	adjustment_variants = list()
 
 /obj/item/clothing/under/rank/synthetic
-	name = "\improper TGMC Support Uniform"
+	name = "\improper Sol Fed Support Uniform"
 	desc = "A simple uniform made for Synthetic crewmembers."
 	icon_state = "rdalt"
 	adjustment_variants = list()

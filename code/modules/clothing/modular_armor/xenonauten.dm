@@ -167,7 +167,7 @@
 	)
 
 /obj/item/clothing/suit/modular/xenonauten/pilot
-	name = "\improper TerraGov standard flak jacket"
+	name = "\improper Solarian Federation standard flak jacket"
 	desc = "A flak jacket used by dropship pilots to protect themselves while flying in the cockpit. Excels in protecting the wearer against high-velocity solid projectiles."
 	flags_item = NONE
 	soft_armor = list(MELEE = 40, BULLET = 50, LASER = 50, ENERGY = 25, BOMB = 30, BIO = 5, FIRE = 25, ACID = 30)
