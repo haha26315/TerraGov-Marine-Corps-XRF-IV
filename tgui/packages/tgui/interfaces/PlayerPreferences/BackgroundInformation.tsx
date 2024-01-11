@@ -11,12 +11,14 @@ export const BackgroundInformation = (props) => {
     gen_record,
     sec_record,
     exploit_record,
+	xeno_desc,
   } = data;
   const [characterDesc, setCharacterDesc] = useState(flavor_text);
   const [medicalDesc, setMedicalDesc] = useState(med_record);
   const [employmentDesc, setEmploymentDesc] = useState(gen_record);
   const [securityDesc, setSecurityDesc] = useState(sec_record);
   const [exploitsDesc, setExploitsDesc] = useState(exploit_record);
+  const [xenoDesc, setXenoDesc] = useState(xeno_desc);
   return (
     <Section title="Background information">
       <Section
@@ -36,9 +38,32 @@ export const BackgroundInformation = (props) => {
         }>
         <TextArea
           key="character"
-          height="100px"
+          height="200px"
           value={characterDesc}
           onChange={(e, value) => setCharacterDesc(value)}
+        />
+      </Section>
+	  
+      <Section
+        title="Xenomorph Description"
+        buttons={
+          <Box>
+            <Button
+              icon="save"
+              disabled={xenoDesc === xeno_desc}
+              onClick={() => act('xeno_desc', { xenoDesc })}>
+              Save
+            </Button>
+            <Button icon="times" onClick={() => setXenoDesc(xeno_desc)}>
+              Reset
+            </Button>
+          </Box>
+        }>
+        <TextArea
+          key="xeno"
+          height="200px"
+          value={xenoDesc}
+          onChange={(e, value) => setXenoDesc(value)}
         />
       </Section>
 

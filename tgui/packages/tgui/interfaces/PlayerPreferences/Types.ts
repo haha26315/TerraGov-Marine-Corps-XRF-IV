@@ -24,6 +24,7 @@ type CharacterCustomizationData = {
 type BackgroundInformationData = {
   slot: number;
   flavor_text: string;
+  xeno_desc: string;
   med_record: string;
   gen_record: string;
   sec_record: string;

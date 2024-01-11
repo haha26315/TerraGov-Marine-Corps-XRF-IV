@@ -549,10 +549,6 @@
 	if(ishuman(user))
 		var/hugsound = user.gender == FEMALE ? get_sfx("female_hugged") : get_sfx("male_hugged")
 		playsound(loc, hugsound, 25, 0)
-	if(!sterile && !issynth(user))
-		var/stamina_dmg = user.maxHealth + user.max_stamina
-		user.apply_damage(stamina_dmg, STAMINA) // complete winds the target
-		user.Unconscious(2 SECONDS)
 	attached = TRUE
 	go_idle(FALSE, TRUE)
 	addtimer(CALLBACK(src, PROC_REF(Impregnate), user), IMPREGNATION_TIME)
