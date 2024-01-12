@@ -182,8 +182,6 @@
 		victim.chestburst = 0
 		return
 
-	victim.update_burst()
-
 	if(istype(victim.loc, /obj/vehicle/multitile/root))
 		var/obj/vehicle/multitile/root/V = victim.loc
 		V.handle_player_exit(src)
@@ -197,33 +195,14 @@
 	if(AE)
 		qdel(AE)
 
-	if(ishuman(victim))
-		var/mob/living/carbon/human/H = victim
-		H.apply_damage(200, BRUTE, H.get_limb("chest"), updating_health = TRUE) //lethal armor ignoring brute damage
-		var/datum/internal_organ/O
-		for(var/i in list("heart", "lungs", "liver", "kidneys", "appendix")) //Bruise all torso internal organs
-			O = H.internal_organs_by_name[i]
-
-			if(!H.mind && !H.client) //If we have no client or mind, permadeath time; remove the organs. Mainly for the NPC colonist bodies
-				H.internal_organs_by_name -= i
-				H.internal_organs -= O
-			else
-				O.take_damage(O.min_bruised_damage, TRUE)
-
-		var/datum/limb/chest = H.get_limb("chest")
-		new /datum/wound/internal_bleeding(15, chest) //Apply internal bleeding to chest
-		chest.fracture()
-
-
 	victim.chestburst = 2
-	victim.update_burst()
 	log_combat(src, null, "chestbursted as a larva.")
 	log_game("[key_name(src)] chestbursted as a larva at [AREACOORD(src)].")
 
 	if(((locate(/obj/structure/bed/nest) in loc) && hive.living_xeno_ruler?.z == loc.z) || (!mind))
 		burrow()
 
-	victim.death()
+	victim.chestburst = 0
 
 
 /mob/living/proc/emote_burstscream()

@@ -244,6 +244,9 @@
 	. = ..()
 	. += xeno_caste.caste_desc
 
+	if(xeno_desc)
+		. += "<span class='info'>[xeno_desc]</span>"
+
 	if(stat == DEAD)
 		. += "It is DEAD. Kicked the bucket. Off to that great hive in the sky."
 	else if(stat == UNCONSCIOUS)

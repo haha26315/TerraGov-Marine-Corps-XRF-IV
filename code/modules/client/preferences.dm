@@ -63,6 +63,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//Xenomorph specific preferences
 	var/xeno_name = "Undefined"
+	var/xeno_desc = ""
 
 	//AI specific preferences
 	var/ai_name = "ARES v3.2"
