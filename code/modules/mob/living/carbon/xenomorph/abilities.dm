@@ -1000,6 +1000,48 @@
 	message_admins("[X] has sent [L] this psychic message: \"[msg]\" at [ADMIN_VERBOSEJMP(X)].")
 
 // ***************************************
+// *********** Psychic Influence
+// ***************************************
+/datum/action/ability/xeno_action/psychic_influence
+	name = "Psychic Influence"
+	action_icon_state = "psychic_whisper"
+	keybinding_signals = list(
+		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PSYCHIC_WHISPER,
+	)
+	use_state_flags = ABILITY_USE_LYING
+	target_flags = ABILITY_MOB_TARGET
+	
+	
+/datum/action/ability/xeno_action/psychic_influence/action_activate()
+	var/mob/living/carbon/xenomorph/X = owner
+	var/list/target_list = list()
+	for(var/mob/living/possible_target in view(WORLD_VIEW, X))
+		if(possible_target == X || !possible_target.client || isxeno(possible_target))
+			continue
+		target_list += possible_target
+
+	if(!length(target_list))
+		to_chat(X, span_warning("There's nobody nearby to influence."))
+		return
+
+	var/mob/living/L = tgui_input_list(X, "Target", "Send a Psychic Influence to whom?", target_list)
+	if(!L)
+		return
+
+	if(!X.check_state())
+		return
+
+	var/msg = stripped_input("Message:", "Psychic Influence")
+	if(!msg)
+		return
+
+	log_directed_talk(X, L, msg, LOG_SAY, "psychic influence")
+	to_chat(L, span_alien("<i>\"[msg]\"</i>"))
+	to_chat(X, span_xenonotice("We influenced: \"[msg]\" to [L]"))
+	message_admins("[X] has sent [L] this psychic influence: \"[msg]\" at [ADMIN_VERBOSEJMP(X)].")
+	
+
+// ***************************************
 // *********** Lay Egg
 // ***************************************
 /datum/action/ability/xeno_action/lay_egg
