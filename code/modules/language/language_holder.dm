@@ -110,6 +110,7 @@
 
 /datum/language_holder/xeno
 	languages = list(/datum/language/xenocommon)
+	shadow_languages = list(/datum/language/common)
 
 
 /datum/language_holder/universal/New()
