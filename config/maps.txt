@@ -13,19 +13,15 @@ Format:
 endmap
 
 map lv624
-	minplayers 25
 endmap
 
 map bigred_v2
-	minplayers 25
 endmap
 
 map ice_colony_v2
-	minplayers 40
 endmap
 
 map prison_station_fop
-	minplayers 20
 	maxplayers 60
 endmap
 
@@ -34,7 +30,6 @@ map vapor_processing
 endmap
 
 map icy_caves
-	maxplayers 50
 endmap
 
 map research_outpost
@@ -48,15 +43,12 @@ map oscar_outpost
 endmap
 
 map magmoor_digsite_iv
-	minplayers 20
 endmap
 
 map orion_outpost
-	maxplayers 40
 endmap
 
 map gelida_iv
-	minplayers 50
 endmap
 
 map deltastation
@@ -71,14 +63,11 @@ map desparity
 endmap
 
 map lawanka
-minplayers 60
 endmap
 
 map slumbridge
-  minplayers 35
+  disabled
 endmap
 
-
 map daedalusprison
-	minplayers 35
 endmap

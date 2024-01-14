@@ -7,7 +7,7 @@
 		/datum/job/terragov/command/fieldcommander = 1,
 		/datum/job/terragov/command/staffofficer = 4,
 		/datum/job/terragov/command/pilot = 2,
-		/datum/job/terragov/command/mech_pilot = 0,
+		/datum/job/terragov/command/mech_pilot = 1,
 		/datum/job/terragov/engineering/chief = 1,
 		/datum/job/terragov/engineering/tech = 1,
 		/datum/job/terragov/requisitions/officer = 1,
@@ -22,9 +22,13 @@
 		/datum/job/terragov/squad/smartgunner = 4,
 		/datum/job/terragov/squad/leader = 4,
 		/datum/job/terragov/squad/standard = -1
+		/datum/job/xenomorph = 8,
+		/datum/job/xenomorph/queen = 1,
+		/datum/job/survivor/rambo = -1,
 	)
 	enable_fun_tads = TRUE
-	xenorespawn_time = 1 MINUTES
+	xenorespawn_time = 15 SECONDS
+	respawn_time = 15 SECONDS
 
 /datum/game_mode/extended/announce()
 	to_chat(world, "<b>The current game mode is - Extended Role-Playing!</b>")
