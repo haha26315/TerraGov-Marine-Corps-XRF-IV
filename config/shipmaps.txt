@@ -13,11 +13,11 @@ Format:
 endmap
 
 map debugdalus
-	default
 	voteweight 0
 endmap
 
 map theseus
+	default
 endmap
 
 map pillar_of_spring
