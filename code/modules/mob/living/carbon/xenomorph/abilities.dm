@@ -1035,7 +1035,7 @@
 		return
 
 	log_directed_talk(X, L, msg, LOG_SAY, "psychic influence")
-	to_chat(L, span_alien("<i>\[msg]\ </i>"))
+	to_chat(L, span_alien("<i>\...[msg]\...</i>"))
 	to_chat(X, span_xenonotice("We influenced: \"[msg]\" to [L]"))
 	message_admins("[X] has sent [L] this psychic influence: \"[msg]\" at [ADMIN_VERBOSEJMP(X)].")
 	
