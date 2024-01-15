@@ -964,12 +964,11 @@
 /datum/action/ability/xeno_action/psychic_whisper
 	name = "Psychic Whisper"
 	action_icon_state = "psychic_whisper"
+	use_state_flags = ABILITY_USE_LYING
+	target_flags = ABILITY_MOB_TARGET
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PSYCHIC_WHISPER,
 	)
-	use_state_flags = ABILITY_USE_LYING
-	target_flags = ABILITY_MOB_TARGET
-
 
 /datum/action/ability/xeno_action/psychic_whisper/action_activate()
 	var/mob/living/carbon/xenomorph/X = owner
@@ -1005,11 +1004,11 @@
 /datum/action/ability/xeno_action/psychic_influence
 	name = "Psychic Influence"
 	action_icon_state = "psychic_whisper"
+	use_state_flags = ABILITY_USE_LYING
+	target_flags = ABILITY_MOB_TARGET
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PSYCHIC_WHISPER,
 	)
-	use_state_flags = ABILITY_USE_LYING
-	target_flags = ABILITY_MOB_TARGET
 	
 	
 /datum/action/ability/xeno_action/psychic_influence/action_activate()
@@ -1036,7 +1035,7 @@
 		return
 
 	log_directed_talk(X, L, msg, LOG_SAY, "psychic influence")
-	to_chat(L, span_alien("<i>\[msg]\</i>"))
+	to_chat(L, span_alien("<i>\[msg]\ </i>"))
 	to_chat(X, span_xenonotice("We influenced: \"[msg]\" to [L]"))
 	message_admins("[X] has sent [L] this psychic influence: \"[msg]\" at [ADMIN_VERBOSEJMP(X)].")
 	
