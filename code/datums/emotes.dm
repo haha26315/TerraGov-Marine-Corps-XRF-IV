@@ -48,8 +48,6 @@
 	if(params && message_param)
 		msg = select_param(user, params)
 
-	msg = replace_pronoun(user, msg)
-
 	if(!msg)
 		return
 
@@ -73,6 +71,8 @@
 			if(!(M.client.prefs.toggles_chat & CHAT_GHOSTSIGHT) || (M in viewers(T, null)))
 				continue
 			M.show_message("[FOLLOW_LINK(M, user)] [dchatmsg]")
+	else
+		msg = replace_pronoun(user, msg) // Only replace pronouns if there is no client
 
 	if(emote_type == EMOTE_AUDIBLE)
 		user.audible_message(msg, audible_message_flags = EMOTE_MESSAGE, emote_prefix = prefix)
