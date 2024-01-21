@@ -192,7 +192,8 @@
 		/turf/closed/wall/resin/regenerating,
 		/obj/alien/resin/sticky,
 		/obj/structure/mineral_door/resin,
-		)
+		/obj/structure/bed/nest,
+	)
 	/// Used for the dragging functionality of pre-shuttter building
 	var/dragging = FALSE
 
@@ -1009,8 +1010,8 @@
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PSYCHIC_WHISPER,
 	)
-	
-	
+
+
 /datum/action/ability/xeno_action/psychic_influence/action_activate()
 	var/mob/living/carbon/xenomorph/X = owner
 	var/list/target_list = list()
@@ -1038,7 +1039,7 @@
 	to_chat(L, span_alien("<i>\...[msg]\...</i>"))
 	to_chat(X, span_xenonotice("We influenced: \"[msg]\" to [L]"))
 	message_admins("[X] has sent [L] this psychic influence: \"[msg]\" at [ADMIN_VERBOSEJMP(X)].")
-	
+
 
 // ***************************************
 // *********** Lay Egg
