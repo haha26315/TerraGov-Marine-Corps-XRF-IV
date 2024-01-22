@@ -61,6 +61,7 @@
 		/datum/action/ability/activable/xeno/hunter_mark,
 		/datum/action/ability/xeno_action/psychic_trace,
 		/datum/action/ability/xeno_action/mirage,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 	// *** Vent Crawl Parameters *** //
@@ -88,6 +89,7 @@
 		/datum/action/ability/activable/xeno/hunter_mark,
 		/datum/action/ability/xeno_action/psychic_trace,
 		/datum/action/ability/xeno_action/mirage,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 

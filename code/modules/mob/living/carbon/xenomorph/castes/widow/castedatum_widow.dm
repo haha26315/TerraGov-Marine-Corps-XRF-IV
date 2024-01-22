@@ -57,6 +57,7 @@
 		/datum/action/ability/xeno_action/attach_spiderlings,
 		/datum/action/ability/activable/xeno/cannibalise,
 		/datum/action/ability/activable/xeno/spiderling_mark,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 /datum/xeno_caste/widow/on_caste_applied(mob/xenomorph)
@@ -93,4 +94,5 @@
 		/datum/action/ability/activable/xeno/cannibalise,
 		/datum/action/ability/activable/xeno/spiderling_mark,
 		/datum/action/ability/activable/xeno/web_hook,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)

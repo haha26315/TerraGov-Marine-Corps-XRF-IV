@@ -11,7 +11,7 @@ export const BackgroundInformation = (props) => {
     gen_record,
     sec_record,
     exploit_record,
-	xeno_desc,
+    xeno_desc,
   } = data;
   const [characterDesc, setCharacterDesc] = useState(flavor_text);
   const [medicalDesc, setMedicalDesc] = useState(med_record);
@@ -43,7 +43,7 @@ export const BackgroundInformation = (props) => {
           onChange={(e, value) => setCharacterDesc(value)}
         />
       </Section>
-	  
+
       <Section
         title="Xenomorph Description"
         buttons={

@@ -7,6 +7,7 @@ import { JobPreferences } from './JobPreferences';
 import { GameSettings } from './GameSettings';
 import { KeybindSettings } from './KeybindSettings';
 import { BackgroundInformation } from './BackgroundInformation';
+import { FlavorCustomization } from './FlavorCustomization';
 import { DrawOrder } from './DrawOrder';
 
 export const PlayerPreferences = (props) => {
@@ -26,20 +27,24 @@ export const PlayerPreferences = (props) => {
       affectsSave = true;
       break;
     case 3:
-      CurrentTab = GearCustomization;
+      CurrentTab = FlavorCustomization;
       affectsSave = true;
       break;
     case 4:
-      CurrentTab = JobPreferences;
+      CurrentTab = GearCustomization;
       affectsSave = true;
       break;
     case 5:
-      CurrentTab = GameSettings;
+      CurrentTab = JobPreferences;
+      affectsSave = true;
       break;
     case 6:
-      CurrentTab = KeybindSettings;
+      CurrentTab = GameSettings;
       break;
     case 7:
+      CurrentTab = KeybindSettings;
+      break;
+    case 8:
       CurrentTab = DrawOrder;
       break;
     default:
@@ -100,26 +105,31 @@ const NavigationSelector = (props) => {
       <Tabs.Tab
         selected={tabIndex === 3}
         onClick={() => act('tab_change', { tabIndex: 3 })}>
-        Gear Customization
+        Flavor Customization
       </Tabs.Tab>
       <Tabs.Tab
         selected={tabIndex === 4}
         onClick={() => act('tab_change', { tabIndex: 4 })}>
-        Job Preferences
+        Gear Customization
       </Tabs.Tab>
       <Tabs.Tab
         selected={tabIndex === 5}
         onClick={() => act('tab_change', { tabIndex: 5 })}>
-        Game Settings
+        Job Preferences
       </Tabs.Tab>
       <Tabs.Tab
         selected={tabIndex === 6}
         onClick={() => act('tab_change', { tabIndex: 6 })}>
-        Keybindings
+        Game Settings
       </Tabs.Tab>
       <Tabs.Tab
         selected={tabIndex === 7}
         onClick={() => act('tab_change', { tabIndex: 7 })}>
+        Keybindings
+      </Tabs.Tab>
+      <Tabs.Tab
+        selected={tabIndex === 8}
+        onClick={() => act('tab_change', { tabIndex: 8 })}>
         Draw Order
       </Tabs.Tab>
     </Tabs>
