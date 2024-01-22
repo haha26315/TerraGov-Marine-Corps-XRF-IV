@@ -45,6 +45,7 @@
 		/datum/action/ability/xeno_action/puppeteer_orders,
 		/datum/action/ability/activable/xeno/articulate,
 		/datum/action/ability/activable/xeno/puppet_blessings,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 /datum/xeno_caste/puppeteer/normal
@@ -75,6 +76,7 @@
 		/datum/action/ability/xeno_action/puppeteer_orders,
 		/datum/action/ability/activable/xeno/articulate,
 		/datum/action/ability/activable/xeno/puppet_blessings,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 	aura_strength = 3

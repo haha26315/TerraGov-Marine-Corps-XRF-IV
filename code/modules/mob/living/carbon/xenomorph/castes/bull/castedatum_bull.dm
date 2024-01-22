@@ -55,6 +55,7 @@
 		/datum/action/ability/activable/xeno/bull_charge,
 		/datum/action/ability/activable/xeno/bull_charge/headbutt,
 		/datum/action/ability/activable/xeno/bull_charge/gore,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 /datum/xeno_caste/bull/normal

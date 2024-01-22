@@ -79,6 +79,7 @@
 		/datum/action/ability/xeno_action/hive_message,
 		/datum/action/ability/xeno_action/rally_hive,
 		/datum/action/ability/activable/xeno/command_minions,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 
@@ -120,4 +121,5 @@
 		/datum/action/ability/xeno_action/rally_hive,
 		/datum/action/ability/activable/xeno/command_minions,
 		/datum/action/ability/xeno_action/ready_charge/queen_charge,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)

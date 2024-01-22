@@ -64,6 +64,7 @@
 		/datum/action/ability/xeno_action/rally_hive,
 		/datum/action/ability/xeno_action/rally_minion,
 		/datum/action/ability/xeno_action/blessing_menu,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 
@@ -98,4 +99,5 @@
 		/datum/action/ability/xeno_action/rally_hive,
 		/datum/action/ability/xeno_action/rally_minion,
 		/datum/action/ability/xeno_action/blessing_menu,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)

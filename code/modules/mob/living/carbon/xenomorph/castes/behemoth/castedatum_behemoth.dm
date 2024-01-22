@@ -50,6 +50,7 @@
 		/datum/action/ability/activable/xeno/landslide,
 		/datum/action/ability/activable/xeno/earth_riser,
 		/datum/action/ability/activable/xeno/seismic_fracture,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 /datum/xeno_caste/behemoth/normal
@@ -73,4 +74,5 @@
 		/datum/action/ability/activable/xeno/earth_riser,
 		/datum/action/ability/activable/xeno/seismic_fracture,
 		/datum/action/ability/xeno_action/primal_wrath,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)

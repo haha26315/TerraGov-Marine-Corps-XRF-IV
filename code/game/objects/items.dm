@@ -144,6 +144,9 @@ GLOBAL_DATUM_INIT(welding_sparks_prepdoor, /mutable_appearance, mutable_appearan
 	///Current variant selected.
 	var/current_variant
 
+	// Allows xenomorphs to be able to use things by default. Turned off for specific item classes. Ex: guns.
+	var/xeno_usable = TRUE
+
 
 
 
@@ -997,6 +1000,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 //This proc is here to prevent Xenomorphs from picking up objects (default attack_hand behaviour)
 //Note that this is overriden by every proc concerning a child of obj unless inherited
 /obj/item/attack_alien(mob/living/carbon/xenomorph/X, isrightclick = FALSE)
+	if(xeno_usable)
+		attack_hand(X, FALSE)
 	return FALSE
 
 

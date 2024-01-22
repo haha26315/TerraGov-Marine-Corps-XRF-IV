@@ -27,6 +27,11 @@
 		else
 			reagents.add_reagent(rid, amount, data)
 
+// Refreshes the taste of an food item based on new descriptions added.
+/obj/item/reagent_containers/food/snacks/proc/refresh_taste()
+	for(var/datum/reagent/consumable/nutriment/reagent_to_update in reagents.reagent_list)
+		reagent_to_update.change_taste(tastes.Copy())
+
 /obj/item/reagent_containers/food/snacks/proc/On_Consume(mob/M)
 	if(!usr)
 		return

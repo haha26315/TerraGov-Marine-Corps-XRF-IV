@@ -51,6 +51,7 @@
 		/datum/action/ability/activable/xeno/ravage,
 		/datum/action/ability/xeno_action/endure,
 		/datum/action/ability/xeno_action/rage,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 /datum/xeno_caste/ravager/on_caste_applied(mob/xenomorph)
@@ -82,4 +83,5 @@
 		/datum/action/ability/xeno_action/endure,
 		/datum/action/ability/xeno_action/rage,
 		/datum/action/ability/xeno_action/vampirism,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)

@@ -54,6 +54,7 @@
 		/datum/action/ability/activable/xeno/fling,
 		/datum/action/ability/activable/xeno/toss,
 		/datum/action/ability/activable/xeno/punch,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
 
 /datum/xeno_caste/warrior/normal
@@ -75,4 +76,5 @@
 		/datum/action/ability/activable/xeno/toss,
 		/datum/action/ability/activable/xeno/punch,
 		/datum/action/ability/activable/xeno/punch/jab,
+		/datum/action/ability/xeno_action/create_edible_jelly,
 	)
