@@ -69,6 +69,16 @@
 	to_chat(src, span_notice("As a ghost, you will [(prefs.toggles_chat & CHAT_GHOSTHIVEMIND) ? "now see chatter from the Xenomorph Hivemind" : "no longer see chatter from the Xenomorph Hivemind"]."))
 
 
+/client/verb/toggle_ghost_psionics()
+	set category = "Preferences"
+	set name = "Toggle Ghost Psionics"
+
+	prefs.toggles_chat ^= CHAT_GHOSTPSI
+	prefs.save_preferences()
+
+	to_chat(src, span_notice("As a ghost, you will now [(prefs.toggles_chat & CHAT_GHOSTPSI) ? "see all psychic whispers and influences in the world" : "only see psychic whispers and influences from nearby Xenos"]."))
+
+
 /client/verb/toggle_deadchat_self()
 	set category = "Preferences"
 	set name = "Toggle  Deadchat"
