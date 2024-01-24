@@ -12,8 +12,8 @@
 	speed = -0.8
 	melee_damage = 18
 	plasma_max = 750
-	plasma_gain = 0
-	plasma_regen_limit = 0
+	plasma_gain = 25
+	plasma_regen_limit = 25
 	plasma_icon_state = "fury"
 	max_health = 365
 	upgrade_threshold = TIER_TWO_THRESHOLD
