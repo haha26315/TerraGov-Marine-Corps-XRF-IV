@@ -239,7 +239,7 @@ GLOBAL_LIST_INIT(department_radio_keys_som, list(
 	for(var/mob/player_mob AS in SSmobs.dead_players_by_zlevel[src_turf.z])
 		if(!client || isnull(player_mob)) //client is so that ghosts don't have to listen to mice
 			continue
-		if(get_dist(player_mob, src) > 7) //they're out of range of normal hearing
+		if(get_dist(player_mob, src) > 9) //they're out of range of normal hearing
 			if(!(player_mob?.client?.prefs.toggles_chat & CHAT_GHOSTEARS))
 				continue
 		listening |= player_mob

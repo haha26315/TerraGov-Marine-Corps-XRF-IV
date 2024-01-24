@@ -79,6 +79,9 @@
 			data["exploit_record"] = exploit_record
 		if(FLAVOR_CUSTOMIZATION)
 			data["xeno_edible_jelly_name"] = xeno_edible_jelly_name
+			data["r_jelly"] = r_jelly
+			data["g_jelly"] = g_jelly
+			data["b_jelly"] = b_jelly
 			data["xeno_edible_jelly_desc"] = xeno_edible_jelly_desc
 			data["xeno_edible_jelly_flavors"] = xeno_edible_jelly_flavors
 		if(GEAR_CUSTOMIZATION)
@@ -603,6 +606,14 @@
 				return
 			xeno_edible_jelly_name = newValue
 
+		if("xeno_edible_jelly_colors")
+			var/jelly_color = input(user, "Choose the color of the jelly:", "Jelly Color") as null|color
+			if(!jelly_color)
+				return
+			r_jelly = hex2num(copytext(jelly_color, 2, 4))
+			g_jelly = hex2num(copytext(jelly_color, 4, 6))
+			b_jelly = hex2num(copytext(jelly_color, 6, 8))
+
 		if("xeno_edible_jelly_desc")
 			var/new_record = trim(html_encode(params["xenoJellyDesc"]), MAX_MESSAGE_LEN)
 			if(!new_record)
@@ -614,6 +625,9 @@
 			if(!new_record)
 				return
 			xeno_edible_jelly_flavors = new_record
+
+		if("xeno_edible_jelly_preview")
+			usr.edible_jelly_preview("popup")
 
 		if("windowflashing")
 			windowflashing = !windowflashing

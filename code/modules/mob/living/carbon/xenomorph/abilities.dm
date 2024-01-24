@@ -959,6 +959,7 @@
 	GLOB.round_statistics.ozelomelyn_stings++
 	SSblackbox.record_feedback("tally", "round_statistics", 1, "ozelomelyn_stings")
 
+
 // ***************************************
 // *********** Psychic Whisper
 // ***************************************
@@ -997,6 +998,17 @@
 	log_directed_talk(X, L, msg, LOG_SAY, "psychic whisper")
 	to_chat(L, span_alien("You hear a strange, alien voice in your head. <i>\"[msg]\"</i>"))
 	to_chat(X, span_xenonotice("We said: \"[msg]\" to [L]"))
+
+	// Send to ghosts
+	for(var/i in GLOB.observer_list)
+		var/mob/dead/observer/S = i
+
+		if(get_dist(S, X) > 7) //they're out of range of normal hearing
+			if(!S?.client?.prefs || !(S.client.prefs.toggles_chat & CHAT_GHOSTPSI))
+				continue
+		var/track = FOLLOW_LINK(S, src)
+		S.show_message("[track] [span_alien("[X] sends [L] this psychic message, '[msg]'")]")
+
 	message_admins("[X] has sent [L] this psychic message: \"[msg]\" at [ADMIN_VERBOSEJMP(X)].")
 
 // ***************************************
@@ -1010,7 +1022,6 @@
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_PSYCHIC_WHISPER,
 	)
-
 
 /datum/action/ability/xeno_action/psychic_influence/action_activate()
 	var/mob/living/carbon/xenomorph/X = owner
@@ -1038,6 +1049,17 @@
 	log_directed_talk(X, L, msg, LOG_SAY, "psychic influence")
 	to_chat(L, span_alien("<i>\...[msg]\...</i>"))
 	to_chat(X, span_xenonotice("We influenced: \"[msg]\" to [L]"))
+
+	// Send to ghosts
+	for(var/i in GLOB.observer_list)
+		var/mob/dead/observer/S = i
+
+		if(get_dist(S, X) > 7) //they're out of range of normal hearing
+			if(!S?.client?.prefs || !(S.client.prefs.toggles_chat & CHAT_GHOSTPSI))
+				continue
+		var/track = FOLLOW_LINK(S, src)
+		S.show_message("[track] [span_alien("[X] sends [L] this psychic influence, '[msg]'")]")
+
 	message_admins("[X] has sent [L] this psychic influence: \"[msg]\" at [ADMIN_VERBOSEJMP(X)].")
 
 

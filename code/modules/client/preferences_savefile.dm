@@ -454,11 +454,14 @@
 	READ_FILE(S["gen_record"], gen_record)
 	READ_FILE(S["exploit_record"], exploit_record)
 	READ_FILE(S["flavor_text"], flavor_text)
+
 	READ_FILE(S["xeno_desc"], xeno_desc)
 	READ_FILE(S["xeno_edible_jelly_name"], xeno_edible_jelly_name)
+	READ_FILE(S["r_jelly"], r_jelly)
+	READ_FILE(S["g_jelly"], g_jelly)
+	READ_FILE(S["b_jelly"], b_jelly)
 	READ_FILE(S["xeno_edible_jelly_desc"], xeno_edible_jelly_desc)
 	READ_FILE(S["xeno_edible_jelly_flavors"], xeno_edible_jelly_flavors)
-
 
 	be_special = sanitize_integer(be_special, NONE, MAX_BITFLAG, initial(be_special))
 
@@ -525,10 +528,14 @@
 	gen_record = sanitize_text(gen_record, initial(gen_record))
 	exploit_record = sanitize_text(exploit_record, initial(exploit_record))
 	flavor_text = sanitize_text(flavor_text, initial(flavor_text))
+
 	xeno_desc = sanitize_text (xeno_desc, initial(xeno_desc))
 	xeno_edible_jelly_name = sanitize_text (xeno_edible_jelly_name, initial(xeno_edible_jelly_name))
 	xeno_edible_jelly_desc = sanitize_text (xeno_edible_jelly_desc, initial(xeno_edible_jelly_desc))
 	xeno_edible_jelly_flavors = sanitize_text (xeno_edible_jelly_flavors, initial(xeno_edible_jelly_flavors))
+	r_jelly = sanitize_integer(r_jelly, 0, 255, initial(r_jelly))
+	g_jelly = sanitize_integer(g_jelly, 0, 255, initial(g_jelly))
+	b_jelly = sanitize_integer(b_jelly, 0, 255, initial(b_jelly))
 
 	if(!synthetic_name)
 		synthetic_name = "David"
@@ -678,8 +685,12 @@
 	WRITE_FILE(S["gen_record"], gen_record)
 	WRITE_FILE(S["exploit_record"], exploit_record)
 	WRITE_FILE(S["flavor_text"], flavor_text)
+
 	WRITE_FILE(S["xeno_desc"], xeno_desc)
 	WRITE_FILE(S["xeno_edible_jelly_name"], xeno_edible_jelly_name)
+	WRITE_FILE(S["r_jelly"], r_jelly)
+	WRITE_FILE(S["g_jelly"], g_jelly)
+	WRITE_FILE(S["b_jelly"], b_jelly)
 	WRITE_FILE(S["xeno_edible_jelly_desc"], xeno_edible_jelly_desc)
 	WRITE_FILE(S["xeno_edible_jelly_flavors"], xeno_edible_jelly_flavors)
 
