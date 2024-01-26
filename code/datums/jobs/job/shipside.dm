@@ -45,7 +45,7 @@
 /datum/job/terragov/command/captain/radio_help_message(mob/M)
 	. = ..()
 	to_chat(M, {"As the captain of the [SSmapping.configs[SHIP_MAP].map_name] you are held by higher standard and are expected to act competently.
-While you may support Nanotrasen, you report to the TGMC High Command, not the corporate office.
+While you may support Nanotrasen, you report to the SFMC High Command, not the corporate office.
 Your primary task is the safety of the ship and her crew, and ensuring the survival and success of the marines.
 Your first order of business should be briefing the marines on the mission they are about to undertake.
 You should not be voluntarily leaving your vessel under any circumstances. A captain goes down with their ship.
@@ -140,7 +140,7 @@ Godspeed, captain! And remember, you are not above the law."})
 	to_chat(M, {"You are charged with overseeing the operation on the ground, and are the highest-ranked deployed marine.
 Your duties are to ensure marines hold when ordered, and push when they are cowering behind barricades.
 Do not ask your men to do anything you would not do side by side with them.
-Make the TGMC proud!"})
+Make the Solarian Federation proud!"})
 
 /datum/job/terragov/command/fieldcommander/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
 	. = ..()
@@ -1170,3 +1170,196 @@ If you require any help, use <b>mentorhelp</b> to ask mentors about what you're 
 /datum/job/terragov/silicon/ai/handle_special_preview(client/parent)
 	parent.show_character_previews(image('icons/mob/ai.dmi', icon_state = "ai", dir = SOUTH))
 	return TRUE
+
+/datum/job/terragov/security
+	job_category = JOB_CAT_SECURITY
+	supervisors = "the Captain"
+	selection_color = "#80000"
+	exp_type_department = EXP_TYPE_MARINES
+
+//Military Police Commander
+/datum/job/terragov/security/mp_commander
+	title = MP_COMMANDER
+	req_admin_notify = TRUE
+	paygrade = "O3"
+	comm_title = "MPCDR"
+	selection_color = "#80000"
+	skills_type = /datum/skills/mpcdr
+	access = ALL_MARINE_ACCESS
+	minimal_access = ALL_MARINE_ACCESS
+	display_order = JOB_DISPLAY_ORDER_EXECUTIVE_OFFICER
+	outfit = /datum/outfit/job/security/mp_commander
+	total_positions = 1
+	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD
+	jobworth = list(
+		/datum/job/xenomorph = LARVA_POINTS_SHIPSIDE,
+		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
+		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
+		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
+	)
+	html_description = {"
+		<b>Difficulty</b>:Very Hard<br /><br />
+		<b>You answer to the</b> Captain<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Extended<br /><br /><br />
+		<b>Duty</b>: Lead the Military Police Corps. Ensure Marines keep decorum and follow the law. Assist the captain if available.
+	"}
+	minimap_icon = "mpcommander"
+
+/datum/job/terragov/security/mp_commander/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
+	. = ..()
+	if(!ishuman(new_mob))
+		return
+	SSdirection.set_leader(TRACKING_ID_MARINE_COMMANDER, new_mob)
+	var/mob/living/carbon/human/new_human = new_mob
+	var/playtime_mins = user?.client?.get_exp(title)
+	if(!playtime_mins || playtime_mins < 1 )
+		return
+	switch(playtime_mins)
+		if(0 to 1500) //starting
+			new_human.wear_id.paygrade = "O3"
+		if(1500 to 7500) // 25 hrs
+			new_human.wear_id.paygrade = "MO4"
+		if(7501 to INFINITY) // 125 hrs
+			new_human.wear_id.paygrade = "MO5"
+
+/datum/job/terragov/security/mp_commander/radio_help_message(mob/M)
+	. = ..()
+	to_chat(M, {"You are charged with overseeing the Military Police Corps deatchment aboard the ship.
+Your duties are to ensure decorum is kept, rules are followed and everything goes smooth.
+YOU ARE NOT A MARINE IN THE TRADITIONAL SENSE. YOUR FIRST AND FOREMOST DUTY REVOLVES AROUND THE SHIPS SECURITY.
+"})
+
+
+/datum/outfit/job/security/mp_commander
+	name = MP_COMMANDER
+	jobtype = /datum/job/terragov/security/mp_commander
+
+	id = /obj/item/card/id/dogtag
+	glasses = /obj/item/clothing/glasses/hud/security
+	ears = /obj/item/radio/headset/mainship/mcom
+	w_uniform = /obj/item/clothing/under/hosformalmale
+	wear_suit = /obj/item/clothing/suit/armor/hos
+	shoes = /obj/item/clothing/shoes/swat
+	gloves = /obj/item/clothing/gloves/marine/officer
+	head = /obj/item/clothing/head/beret/sec/hos
+	r_store = /obj/item/storage/pouch/general/large/command
+	l_store = /obj/item/hud_tablet/fieldcommand
+	back = /obj/item/storage/backpack/security
+	suit_store = /obj/item/storage/holster/belt/pistol/m4a3/fieldcommander
+
+/datum/outfit/job/security/mp_commander/robot
+	species = SPECIES_COMBAT_ROBOT
+
+	w_uniform = /obj/item/clothing/under/marine/robotic
+	wear_suit = /obj/item/clothing/suit/modular/robot
+	shoes = null
+	gloves = null
+	head = /obj/item/clothing/head/modular/robot
+	r_store = /obj/item/storage/pouch/general/large/command
+	l_store = /obj/item/hud_tablet/fieldcommand
+	suit_store = /obj/item/storage/holster/belt/pistol/m4a3/fieldcommander
+
+
+//Military Police Officer
+/datum/job/terragov/security/mp_officer
+	title = MP_OFFICER
+	paygrade = "E3"
+	comm_title = "MP"
+	access = ALL_MARINE_ACCESS
+	selection_color = "#800000"
+	minimal_access = ALL_MARINE_ACCESS
+	display_order = JOB_DISPLAY_ORDER_MP_OFFICER
+	skills_type = /datum/skills/mp
+	outfit = /datum/outfit/job/mp_officer
+	total_positions = 4
+	job_flags = JOB_FLAG_LATEJOINABLE|JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_ALLOWS_PREFS_GEAR|JOB_FLAG_PROVIDES_BANK_ACCOUNT|JOB_FLAG_ADDTOMANIFEST|JOB_FLAG_PROVIDES_SQUAD_HUD|JOB_FLAG_CAN_SEE_ORDERS
+	job_category = JOB_CAT_SECURITY
+	jobworth = list(
+		/datum/job/xenomorph = LARVA_POINTS_REGULAR,
+		/datum/job/terragov/squad/smartgunner = SMARTIE_POINTS_REGULAR,
+		/datum/job/terragov/squad/corpsman = SMARTIE_POINTS_REGULAR,
+		/datum/job/terragov/squad/engineer = SMARTIE_POINTS_REGULAR,
+		/datum/job/terragov/silicon/synthetic = SYNTH_POINTS_REGULAR,
+		/datum/job/terragov/command/mech_pilot = MECH_POINTS_REGULAR,
+	)
+	html_description = {"
+		<b>Difficulty</b>: Medium<br /><br />
+		<b>You answer to the</b> MP Commander and above.<br /><br />
+		<b>Unlock Requirement</b>: Starting Role<br /><br />
+		<b>Gamemode Availability</b>: Crash, Distress<br /><br /><br />
+		Maintain order in the base.
+		<br />You are part of the Military Police Corps that was attached onto the XRF.<br />
+		<b>Duty</b>: Maintain decorum, protect the ship and ensure"}
+
+/datum/job/terragov/security/mp_commander/radio_help_message(mob/M)
+	. = ..()
+	to_chat(M, {"You are part of the Military Police Corps assigned to this vessel.
+Your duties are to ensure decorum is kept, rules are followed and everything goes smooth.
+YOU ARE NOT A MARINE IN THE TRADITIONAL SENSE. YOUR FIRST AND FOREMOST DUTY REVOLVES AROUND THE SHIPS SECURITY.
+"})
+
+	minimap_icon = "mp"
+
+/datum/job/terragov/security/security_officer/after_spawn(mob/living/carbon/new_mob, mob/user, latejoin = FALSE)
+	. = ..()
+	if(!ishuman(new_mob))
+		return
+	var/mob/living/carbon/human/new_human = new_mob
+	var/playtime_mins = user?.client?.get_exp(title)
+	if(!playtime_mins || playtime_mins < 1 )
+		return
+	switch(playtime_mins)
+		if(0 to 1500) // starting
+			new_human.wear_id.paygrade = "E3"
+		if(1501 to 6000) // 25 hrs
+			new_human.wear_id.paygrade = "E4"
+		if(6001 to 60000) // 100 hrs
+			new_human.wear_id.paygrade = "E5"
+		if(60001 to INFINITY) // 1000 hrs
+			new_human.wear_id.paygrade = "E9" //If you play way too much TGMC. 1000 hours.
+
+/datum/outfit/job/mp_officer
+	name = MP_OFFICER
+	jobtype = /datum/job/terragov/security/mp_officer
+
+	id = /obj/item/card/id/dogtag
+	back = /obj/item/storage/backpack/security
+	glasses = /obj/item/clothing/glasses/hud/security
+	belt = /obj/item/storage/belt/security
+	head = /obj/item/clothing/head/beret/sec
+	ears = /obj/item/radio/headset/mainship/marine
+	w_uniform = /obj/item/clothing/under/rank/security/corp
+//	wear_suit = 
+	shoes = /obj/item/clothing/shoes/swat
+	gloves = /obj/item/clothing/gloves/marine/fingerless
+
+
+//Prisoner
+/datum/job/terragov/security/prisoner
+	title = "Prisoner"
+	paygrade = "Psnr"
+	comm_title = "Psnr"
+	outfit = /datum/outfit/job/prisoner
+	supervisors = "the Military Police Corps"
+	display_order = JOB_DISPLAY_ORDER_PRISONER
+	skills_type = /datum/skills/civilian
+	total_positions = 4
+	selection_color = "#db9704"
+	job_flags = JOB_FLAG_ROUNDSTARTJOINABLE|JOB_FLAG_LATEJOINABLE|JOB_FLAG_OVERRIDELATEJOINSPAWN|JOB_FLAG_ADDTOMANIFEST
+	job_category = JOB_CAT_SECURITY
+
+/datum/job/terragov/security/prisoner/radio_help_message(mob/M)
+	. = ..()
+	to_chat(M, {"You either are a Marine that messed up and got a brig-sentence or got picked up from the planet for similar reasons- perhaps even just protective custody.
+Either way there is not a whole lot to do other than comply and wait until you are let out again.
+"})
+
+/datum/outfit/job/prisoner
+	name = PRISONER
+	jobtype = /datum/job/terragov/security/prisoner
+
+	id = /obj/item/card/id
+	w_uniform = /obj/item/clothing/under/rank/prisoner
+	shoes = /obj/item/clothing/shoes/orange
+	ears = /obj/item/radio/headset/mainship

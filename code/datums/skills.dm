@@ -745,3 +745,27 @@ engineer, construction, leadership, medical, surgery, pilot, police, powerloader
 	name = "Skeleton"
 	cqc = SKILL_CQC_TRAINED
 	melee_weapons = SKILL_MELEE_TRAINED
+
+
+/datum/skills/mpcdr
+	name = MP_COMMANDER
+	
+	cqc = SKILL_CQC_MASTER
+	firearms = SKILL_FIREARMS_TRAINED
+	pistols = SKILL_PISTOLS_TRAINED
+	shotguns = SKILL_SHOTGUNS_TRAINED
+	smgs = SKILL_SMGS_TRAINED
+	melee_weapons = SKILL_MELEE_SUPER
+	police = SKILL_POLICE_MP
+
+/datum/skills/mp
+	name = MP_OFFICER
+
+	cqc = SKILL_CQC_MP
+	firearms = SKILL_FIREARMS_DEFAULT
+	smgs = SKILL_SMGS_TRAINED
+	rifles = SKILL_RIFLES_TRAINED
+	shotguns = SKILL_SHOTGUNS_TRAINED
+	melee_weapons = SKILL_MELEE_DEFAULT
+	pistols = SKILL_PISTOLS_TRAINED
+	police = SKILL_POLICE_MP
