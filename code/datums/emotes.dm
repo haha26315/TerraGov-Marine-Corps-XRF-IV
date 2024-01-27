@@ -79,6 +79,9 @@
 	else
 		msg = replace_pronoun(user, msg) // Only replace pronouns if there is no client
 
+	// Ensure it filters to 'local' within chat tabs
+	msg = span_emote("[msg]")
+
 	// ghost_visible is set to false because the whole thing right above us already displays the message to ghosts. Don't wanna put it in chat twice.
 	if(emote_type == EMOTE_AUDIBLE)
 		user.audible_message(msg, audible_message_flags = EMOTE_MESSAGE, emote_prefix = prefix, hearing_distance = range, ghost_visible = FALSE)
