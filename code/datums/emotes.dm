@@ -151,6 +151,7 @@
 				return FALSE
 
 			if(user.client.handle_spam_prevention(message, MUTE_IC))
+				message_admins("Spam prevention triggered by [user] at [ADMIN_VERBOSEJMP(user)]")
 				return FALSE
 
 			if(is_banned_from(user.ckey, "Emote"))
@@ -167,7 +168,6 @@
 					to_chat(user, span_notice("You cannot [key] while unconscious."))
 				if(DEAD)
 					to_chat(user, span_notice("You cannot [key] while dead."))
-
 			return FALSE
 
 		if(flags_emote & EMOTE_RESTRAINT_CHECK)
