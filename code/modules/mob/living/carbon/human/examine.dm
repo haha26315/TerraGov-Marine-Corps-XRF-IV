@@ -487,7 +487,7 @@
 			if(assigned_squad == H.assigned_squad) //same squad
 				msg += "<a href='?src=[text_ref(src)];squadfireteam=1'>\[Assign to a fireteam.\]</a>\n"
 
-	msg += "[flavor_text]<br>"
+	msg += "\n[span_collapsible("Show / Hide Flavortext", "[flavor_text]")]\n"
 
 	if(HAS_TRAIT(src, TRAIT_HOLLOW))
 		if(isxeno(user))
