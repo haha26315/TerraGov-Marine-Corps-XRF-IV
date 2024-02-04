@@ -245,7 +245,7 @@
 	. += xeno_caste.caste_desc
 
 	if(xeno_desc)
-		. += "<span class='info'>[xeno_desc]</span>"
+		. += "\n<span class='info'>[span_collapsible("Show / Hide Flavortext", "[xeno_desc]")]</span>"
 
 	if(stat == DEAD)
 		. += "It is DEAD. Kicked the bucket. Off to that great hive in the sky."

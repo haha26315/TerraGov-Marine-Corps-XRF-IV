@@ -4,11 +4,16 @@
  * @license MIT
  */
 
-import { Component } from 'react';
+import { Component, ReactNode } from 'react';
 import { Box } from './Box';
 import { Button } from './Button';
 
-export class Collapsible extends Component {
+type CollapsibleProps = {
+  children?: ReactNode;
+  content: ReactNode;
+};
+
+export class Collapsible extends Component<CollapsibleProps> {
   constructor(props) {
     super(props);
     const { open } = props;
